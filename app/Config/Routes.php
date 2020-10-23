@@ -31,6 +31,17 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/mahasiswa', function(){
+	$data['judul']='Mahasiswa';
+	$data['h1']= 'Table Mahasiswa';
+	$data['nama']='Ridho Alrafi';
+	$data['npm']='1817051009';
+	$data['semester']='5';
+	echo view('mahasiswa/header', $data);
+	echo view('mahasiswa/index', $data);
+	echo view('mahasiswa/footer');
+});
+
 
 /**
  * --------------------------------------------------------------------
